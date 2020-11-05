@@ -1,7 +1,7 @@
 import express from "express"; // express framework를 사용하기 위해 import함
 import morgan from "morgan"; // debugging을 위해 morgan을 import함
-import mongoose from "mongoose";
-import Lecture from "./models/Lecture";
+import mongoose from "mongoose"; // mongoose를 통해 데이터를 연결하기 위해 import함
+import Lecture from "./models/Lecture"; // Lecture DB조회를 위해 import함
 
 // 172.30.1.23/admin
 
@@ -10,6 +10,9 @@ const PORT = 7000;
 
 // express를 app에 넣는다.
 const app = express();
+
+// app.js 에게 morgan를 써야한다고 신호를 줌
+// dev <- 키워드
 app.use(morgan(`dev`));
 
 // connect(); <--- 함수
