@@ -12,12 +12,12 @@ const Lecture = new Schema(
       type: String,
       required: true,
     },
-    lv: {
+    time: {
       type: Number,
       required: true,
     },
-    location: {
-      type: String,
+    grade: {
+      type: Number,
       required: true,
     },
     pay: {
