@@ -15,6 +15,9 @@ const app = express();
 // dev <- 키워드
 app.use(morgan(`dev`));
 
+// app.js 에게 pug 써야한다고 신호를 줌
+app.set("view engine", "pug");
+
 // connect(); <--- 함수
 mongoose.connect(
   `mongodb://4leaf_edu:fourleaf0522@172.30.1.23:27017/admin`,
