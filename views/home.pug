@@ -6,3 +6,11 @@ html(lang="en")
         title Document
     body
         h1 Hello World
+
+         each data in lectureList 
+            h3 강의명:#{data.name}
+            h3 강사명:#{data.teacher}
+            h3 시간:#{data.time}
+            h3 학년:#{data.grade}
+            h3 수강료:#{data.pay}원
+            hr

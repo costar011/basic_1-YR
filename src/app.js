@@ -3,7 +3,7 @@ import morgan from "morgan"; // debugging을 위해 morgan을 import함
 import mongoose from "mongoose"; // mongoose를 통해 데이터를 연결하기 위해 import함
 import Lecture from "./models/Lecture"; // Lecture DB조회를 위해 import함
 
-// 172.30.1.23/admin
+// 172.30.1.23
 
 // webserver 실행 port를 70000번으로 실행하기위해 미리 상수 PORT에 7000을 저장한다.
 const PORT = 7000;
@@ -20,7 +20,7 @@ app.set("view engine", "pug");
 
 // connect(); <--- 함수
 mongoose.connect(
-  `mongodb://4leaf_edu:fourleaf0522@172.30.1.23:27017/admin`,
+  `mongodb://4leaf_edu:fourleaf0522@172.30.1.23:27017`,
   {
     dbName: `Lecture`,
     useNewUrlParser: true,
