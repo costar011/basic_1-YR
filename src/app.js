@@ -53,3 +53,6 @@ app.get("/", async (req, res) => {
 app.listen(PORT, () => {
   console.log(`${PORT} server start`);
 });
+
+// home.pug each data in lectureList 설명
+//lectureList가 뭔데? 우리가 database에서 find 한 것을 보여주는데 lectureList는 반복해준다.
