@@ -37,8 +37,13 @@ app.get("/", async (req, res) => {
   console.log(" ⭕️ CALLED BY USER!");
 
   const result = await Lecture.find({}, {});
-
+  // mongoose를 find로 database로 찾는다.
   console.log(result);
+
+  // res.render("home") <-- pug 연결
+  // 사용자에게 home.pug 를 준다.
+  // lectureList 이름으로 result를 보여준다.
+  return res.render("home", { lectureList: result });
 });
 
 // 설정 끝난 후 Server Start
