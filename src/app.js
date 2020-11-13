@@ -2,8 +2,9 @@ import express from "express"; // express framework를 사용하기 위해 impor
 import morgan from "morgan"; // debugging을 위해 morgan을 import함
 import mongoose from "mongoose"; // mongoose를 통해 데이터를 연결하기 위해 import함
 import Lecture from "./models/Lecture"; // Lecture DB조회를 위해 import함
+import path from "path"; // path->경로 경로를 추적할 수 있는 것을 impoert함
 
-// 172.30.1.23
+// 192.168.1.89
 
 // webserver 실행 port를 70000번으로 실행하기위해 미리 상수 PORT에 7000을 저장한다.
 const PORT = 7000;
@@ -18,9 +19,12 @@ app.use(morgan(`dev`));
 // app.js 에게 pug 써야한다고 신호를 줌
 app.set("view engine", "pug");
 
+// 현재 경로 뒤에 /assets안에 있는 폴더를 사용해라.
+app.use(express.static(path.join(__dirname, "/assets")));
+
 // connect(); <--- 함수
 mongoose.connect(
-  `mongodb://4leaf_edu:fourleaf0522@172.30.1.23:27017`,
+  `mongodb://4leaf_edu:fourleaf0522@192.168.1.89:27017`,
   {
     dbName: `Lecture`,
     useNewUrlParser: true,
