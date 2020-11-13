@@ -2,9 +2,10 @@ import express from "express"; // express framework를 사용하기 위해 impor
 import morgan from "morgan"; // debugging을 위해 morgan을 import함
 import mongoose from "mongoose"; // mongoose를 통해 데이터를 연결하기 위해 import함
 import Lecture from "./models/Lecture"; // Lecture DB조회를 위해 import함
+import Test from "./models/Test"; // Test DB조회를 위해 import함
 import path from "path"; // path->경로 경로를 추적할 수 있는 것을 impoert함
 
-// 192.168.1.89
+// 172.30.1.23
 
 // webserver 실행 port를 70000번으로 실행하기위해 미리 상수 PORT에 7000을 저장한다.
 const PORT = 7000;
@@ -24,9 +25,9 @@ app.use(express.static(path.join(__dirname, "/assets")));
 
 // connect(); <--- 함수
 mongoose.connect(
-  `mongodb://4leaf_edu:fourleaf0522@192.168.1.89:27017`,
+  `mongodb://4leaf_edu:fourleaf0522@172.30.1.23:27017`,
   {
-    dbName: `Lecture`,
+    dbName: `JYR`,
     useNewUrlParser: true,
     useCreateIndex: true,
   },
@@ -41,16 +42,31 @@ mongoose.connect(
 
 // 사용자가 "/"을 요청하면 async await을 통하여 데이터들을 find로 찾아서 console에 뿌려준다.
 app.get("/", async (req, res) => {
-  console.log(" ⭕️ CALLED BY USER!");
+  console.log(" ⭕️ CALLED BY Lecture!");
 
   const result = await Lecture.find({}, {});
   // mongoose를 find로 database로 찾는다.
+
   console.log(result);
 
   // res.render("home") <-- pug 연결
   // 사용자에게 home.pug 를 준다.
   // lectureList 이름으로 result를 보여준다.
   return res.render("home", { lectureList: result });
+});
+
+app.get("/test", async (req, res) => {
+  console.log("⭕️ CALLED BY TEST!");
+
+  const result = await Test.find({}, {});
+  // mongoose를 find로 database로 찾는다.
+
+  console.log(result);
+
+  // res.render("test") <-- pug 연결
+  // 사용자에게 test.pug 를 준다.
+  // lectureList 이름으로 result를 보여준다.
+  return res.render("test", { TestList: result });
 });
 
 // 설정 끝난 후 Server Start

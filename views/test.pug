@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title TEST
+        link(rel="stylesheet", href="styles.css")
+    body
+        each data in TestList
+            .wrapper
+                .testBox
+                    .testBox__top
+                       span #{data.name}
+                    .testBox__bottom
+                        span #{data.age}
+                        span #{data.school}
+                        span #{data.gender}
+                        span #{data.regeon}
