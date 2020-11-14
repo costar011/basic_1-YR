@@ -55,6 +55,7 @@ app.get("/", async (req, res) => {
   return res.render("home", { lectureList: result });
 });
 
+// 사용자가 "/test"을 요청하면 async await을 통하여 데이터들을 find로 찾아서 console에 뿌려준다.
 app.get("/test", async (req, res) => {
   console.log("⭕️ CALLED BY TEST!");
 
@@ -67,6 +68,12 @@ app.get("/test", async (req, res) => {
   // 사용자에게 test.pug 를 준다.
   // lectureList 이름으로 result를 보여준다.
   return res.render("test", { TestList: result });
+});
+
+// res.render("board") <-- pug 연결
+// 사용자에게 board.pug 를 준다.
+app.get("/board", (rea, res) => {
+  res.render("board");
 });
 
 // 설정 끝난 후 Server Start
