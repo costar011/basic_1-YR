@@ -1,8 +1,41 @@
+@import "./reset.css";
+
 .wrapper {
-  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+
+  align-items: center;
 }
 
 .wrapper .testBox {
+  padding: 20px;
+
+  width: 350px;
+  height: 220px;
+  margin-bottom: 25px;
+
+  border: 3px solid #bdc3c7;
+  border-radius: 3px;
+
+  transition: 0.6s;
+  box-shadow: 15px 15px 1px #a4b0be;
+}
+
+.wrapper .testBox .testBox__top {
+  font-size: 30px;
+  padding: 10px;
+}
+
+.wrapper .testBox .testBox__bottom {
   display: flex;
   flex-direction: column;
+
+  font-size: 20px;
+  margin: 15px;
+}
+
+.testBox__bottom span {
+  margin: 5px;
 }
