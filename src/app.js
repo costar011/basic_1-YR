@@ -33,7 +33,7 @@ mongoose.connect(
   },
   (error) => {
     if (error) {
-      console.log("Failed To DB Connect");
+      console.log("❌ Failed To DB Connect");
     } else {
       console.log("✅ CUNNECT TO DB!");
     }
@@ -98,3 +98,8 @@ app.listen(PORT, () => {
 
 // home.pug each data in lectureList 설명
 //lectureList가 뭔데? 우리가 database에서 find 한 것을 보여주는데 lectureList는 반복해준다.
+
+// main.css  calc설명
+// calc 라는 녀석은 계산을 해주는 녀석이다.
+// calc 라는 녀석은 자동으로 처리해주는 애
+// 만약에 calc 얘가 없었다면 50px만큼 밑으로 스크롤이 생겼을 것 이다.
