@@ -76,6 +76,21 @@ app.get("/board", (rea, res) => {
   res.render("board");
 });
 
+// main 라는 애를 누르게 되면 layouts안에 있는 main.pug를 보여준다.
+app.get("/main", (req, res) => {
+  res.render("layouts/main");
+});
+
+// test1 라는 애를 누르게 되면 screnns안에 있는 test1 를 보여준다.
+app.get("/test1", (req, res) => {
+  res.render("screens/test1");
+});
+
+// test2 라는 애를 누르게 되면 screnns안에 있는 test2 를 보여준다.
+app.get("/test2", (req, res) => {
+  res.render("screens/test2");
+});
+
 // 설정 끝난 후 Server Start
 app.listen(PORT, () => {
   console.log(`${PORT} server start`);
