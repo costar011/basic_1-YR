@@ -93,7 +93,7 @@ app.get("/test2", (req, res) => {
 
 // 설정 끝난 후 Server Start
 app.listen(PORT, () => {
-  console.log(`${PORT} server start`);
+  console.log(`${PORT} ✅ Server Start`);
 });
 
 // home.pug each data in lectureList 설명
