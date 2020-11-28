@@ -5,7 +5,7 @@ import Lecture from "./models/Lecture"; // Lecture DB조회를 위해 import함
 import Test from "./models/Test"; // Test DB조회를 위해 import함
 import path from "path"; // path->경로 경로를 추적할 수 있는 것을 impoert함
 
-// 192.168.1.89
+// 172.30.1.23
 
 // webserver 실행 port를 70000번으로 실행하기위해 미리 상수 PORT에 7000을 저장한다.
 const PORT = 7000;
@@ -25,7 +25,7 @@ app.use(express.static(path.join(__dirname, "/assets")));
 
 // connect(); <--- 함수
 mongoose.connect(
-  `mongodb://4leaf_edu:fourleaf0522@192.168.1.89:27017`,
+  `mongodb://4leaf_edu:fourleaf0522@172.30.1.23:27017`,
   {
     dbName: `JYR`,
     useNewUrlParser: true,
