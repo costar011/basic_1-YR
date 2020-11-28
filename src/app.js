@@ -47,12 +47,10 @@ app.get("/", async (req, res) => {
   const result = await Lecture.find({}, {});
   // mongoose를 find로 database로 찾는다.
 
-  console.log(result);
-
   // res.render("home") <-- pug 연결
   // 사용자에게 home.pug 를 준다.
   // lectureList 이름으로 result를 보여준다.
-  return res.render("home", { lectureList: result });
+  return res.render("screens/home", { lectureList: result });
 });
 
 // 사용자가 "/test"을 요청하면 async await을 통하여 데이터들을 find로 찾아서 console에 뿌려준다.
@@ -61,8 +59,6 @@ app.get("/test", async (req, res) => {
 
   const result = await Test.find({}, {});
   // mongoose를 find로 database로 찾는다.
-
-  console.log(result);
 
   // res.render("test") <-- pug 연결
   // 사용자에게 test.pug 를 준다.
